@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Intensive.Units.Player
 {
+    //Hello, world
     [RequireComponent(typeof(PlayerControllerComponent))]
     public class PlayerModelComponent : MonoBehaviour
     {
