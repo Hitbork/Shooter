@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c2766e4b4e45944f8c99507e3dd1fc6, type: 3}
+  m_Name: BaseWeaponData
+  m_EditorClassIdentifier: 
+  _data:
+  - WeaponName: Rifle
+    ProjectileType: 0
+    CooldownFire: 0.07
+    WeaponOverheat:
+      MediumTemperature: 0.2
+      DelayCooling: 0.5
+      DelayCoolingAfterOverheat: 2
+      WarmingPerShot: 0.01
+      CoolingInSec: 0.04
+    Projectile:
+      EffectType: 0
+      Damage: 5000
+      LifeTime: 7
+      Speed: 100
+  - WeaponName: Shotgun
+    ProjectileType: 0
+    CooldownFire: 0.5
+    WeaponOverheat:
+      MediumTemperature: 0.4
+      DelayCooling: 0
+      DelayCoolingAfterOverheat: 1.25
+      WarmingPerShot: 0.2
+      CoolingInSec: 0.025
+    Projectile:
+      EffectType: 0
+      Damage: 10
+      LifeTime: 7
+      Speed: 70
+  - WeaponName: Grenade Launcher
+    ProjectileType: 1
+    CooldownFire: 2
+    WeaponOverheat:
+      MediumTemperature: 0
+      DelayCooling: 0.2
+      DelayCoolingAfterOverheat: 0.2
+      WarmingPerShot: 1
+      CoolingInSec: 0.02
+    Projectile:
+      EffectType: 1
+      Damage: 150
+      LifeTime: 7
+      Speed: 20
