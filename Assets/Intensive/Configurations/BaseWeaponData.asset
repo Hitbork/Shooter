@@ -28,7 +28,7 @@ MonoBehaviour:
       LifeTime: 7
       Speed: 100
   - WeaponName: Shotgun
-    ProjectileType: 0
+    ProjectileType: 2
     CooldownFire: 0.5
     WeaponOverheat:
       MediumTemperature: 0.4

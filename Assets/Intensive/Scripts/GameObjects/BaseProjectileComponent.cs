@@ -37,6 +37,11 @@ namespace Intensive.GameObjects
 
         protected virtual void OnTriggerEnter(Collider other)
 		{
+            if (other.GetComponent<BaseProjectileComponent>() != null) {
+                return;
+            }
+                
+
             var unit = other.GetComponent<Unit>();
             if (unit != null) unit.Health -= Damage;
             OnCollisionProjectile?.Invoke(this, unit);

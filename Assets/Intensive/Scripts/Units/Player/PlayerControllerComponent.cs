@@ -250,7 +250,18 @@ namespace Intensive.Units.Player
                 //Если оружие в перезарядке - не стреляем
                 if (!_playerUI.WeaponIsReady) return;
 
-                OnSpawnProjectileEvent?.Invoke(_firePoint.position, _firePoint.rotation, _weapons[_currentWeaponIndex].ProjectileType, data: _weapons[_currentWeaponIndex].Projectile);
+                if (_weapons[_currentWeaponIndex].ProjectileType != PrefabType.SmallBullet)
+                {
+                    OnSpawnProjectileEvent?.Invoke(_firePoint.position, _firePoint.rotation, _weapons[_currentWeaponIndex].ProjectileType, data: _weapons[_currentWeaponIndex].Projectile);
+                } else
+                {
+                    for (int i = 0; i < 30; i++)
+                    {
+                        var random = new Vector3(UnityEngine.Random.Range(-10f, 10f), UnityEngine.Random.Range(-10f, 10f), 0f);
+                        OnSpawnProjectileEvent?.Invoke(_firePoint.position, Quaternion.Euler(_firePoint.eulerAngles + random), _weapons[_currentWeaponIndex].ProjectileType, data: _weapons[_currentWeaponIndex].Projectile);
+                    }  
+                }
+
                 _muzzleEffect.Play();
                 _bulletEffect.Play();
                 _playerUI.PlayerShot(_weapons[_currentWeaponIndex].CooldownFire);

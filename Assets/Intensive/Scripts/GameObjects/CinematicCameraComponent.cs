@@ -104,6 +104,9 @@ namespace Intensive
         /// </summary>
         private void CinematicEnd_EditorEvent()
         {
+            Destroy(_ship.GetComponent<Animator>());
+            _ship.transform.position = new Vector3(90.89997f, 20.90005f, 336.0001f);
+            _ship.transform.eulerAngles = new Vector3(48.226f, 120.359f, -37.78f);
             _gameManager.StartGame();
             Tooltip.Up();
             Destroy(gameObject);
